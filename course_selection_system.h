@@ -273,3 +273,23 @@ void modifyCourse(vector<Course>& courses, const string& courseId) {
     }
 }
 
+
+bool teacherLogin(vector<User>& teachers) {
+    cout << "请输入教师用户名: ";
+    string username;
+    cin >> username;
+    cout << "请输入密码: ";
+    string password;
+    cin >> password;
+    return login(teachers, username, password);
+}
+
+bool studentLogin(vector<User>& students) {
+    cout << "请输入学生用户名: ";
+    string username;
+    cin >> username;
+    cout << "请输入密码: ";
+    string password;
+    cin >> password;
+    return login(students, username, password);
+}
