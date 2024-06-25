@@ -1,0 +1,3 @@
+C001 Programming 3 21 30
+C002 Mathematics 4 25 30
+C003 Physics 3 28 30
