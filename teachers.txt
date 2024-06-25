@@ -1,3 +1,0 @@
-teacher1 123123
-teacher2 password2
-teacher3 password3

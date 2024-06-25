@@ -220,8 +220,7 @@ void inputCourseInfo(vector<Course>& courses) {
 void addCourse(vector<Course>& courses) {
     inputCourseInfo(courses);
 } 
-// 其他函数如addCourse、deleteCourse等需要类似地实现  
-// ...
+
 
 // 修改密码
 void changePassword(vector<User>& users, const string& filename, const string& username) {
@@ -273,3 +272,4 @@ void modifyCourse(vector<Course>& courses, const string& courseId) {
         cout << "课程编号不存在，修改失败！" << endl;
     }
 }
+
