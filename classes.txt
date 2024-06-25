@@ -1,3 +1,4 @@
-C001 Programming 3 21 30
+C001 Programming 3 22 30 student1
 C002 Mathematics 4 25 30
 C003 Physics 3 28 30
+C004 Chinese 6 10 80 student1
