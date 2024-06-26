@@ -112,7 +112,9 @@ int main() {
                                 displayCourses(courses);
                                 break;
                             case 2:  // 选课
-                                cout << "实现选课功能" << endl; // 实现选课功能
+                                cout << "学生登录成功，可以选择课程" << endl;
+                                selectCourse(courses, username);
+                                writeCoursesToFile(courses, "classes.txt");
                                 break;
                             case 3:  // 退课
                                 cout << "请输入要退的课程编号: ";

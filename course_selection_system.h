@@ -170,26 +170,32 @@ void deleteCourse(vector<Course>& courses, const string& courseId) {
     }  
 }
 
-void selectCourse(vector<Course>& courses, const string& studentName, const string& courseId) {  
-    // 查找课程  
-    auto courseIt = find_if(courses.begin(), courses.end(), [&](const Course& c) {  
-        return c.courseId == courseId;  
-    });  
-  
-    if (courseIt != courses.end()) { // 如果找到了课程  
-        // 检查课程是否已满  
-        if (courseIt->enrolledStudents >= courseIt->maxStudents) {  
-            cout << "课程已满，无法选课！" << endl;  
-        } else {  
-            // 将学生添加到课程的学生列表中  
-            courseIt->enrolledStudentNames.push_back(studentName);  
-            courseIt->enrolledStudents++;  
-            cout << "选课成功！" << endl;  
-        }  
-    } else { // 如果没有找到课程  
-        cout << "课程编号不存在，无法选课！" << endl;  
-    }  
+// 学生选课
+void selectCourse(vector<Course>& courses, const string& studentName) {
+    cout << "可选课程列表：" << endl;
+    displayCourses(courses);
+
+    cout << "请输入课程编号以选择课程: ";
+    string courseId;
+    cin >> courseId;
+    
+    auto it = find_if(courses.begin(), courses.end(), [&](const Course& course) {
+        return course.courseId == courseId;
+    });
+
+    if (it != courses.end()) {
+        if (it->enrolledStudents < it->maxStudents) {
+            it->enrolledStudentNames.push_back(studentName);
+            it->enrolledStudents++;
+            cout << "选课成功！" << endl;
+        } else {
+            cout << "课程人数已满，选课失败！" << endl;
+        }
+    } else {
+        cout << "课程编号不存在，选课失败！" << endl;
+    }
 }
+
 // 输入课程信息并添加到课程列表中  
 void inputCourseInfo(vector<Course>& courses) {  
     Course course;  
