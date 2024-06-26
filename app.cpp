@@ -23,7 +23,9 @@ void displayStudentMenu() {
     cout << "2. 选课" << endl;
     cout << "3. 退课" << endl;
     cout << "4. 修改密码" << endl;
-    cout << "5. 退出" << endl;
+    cout << "5. 课程名搜索" << endl;
+    cout << "6. 学分搜索" << endl;
+    cout << "7. 退出" << endl;
 }
 
 int main() {
@@ -38,6 +40,8 @@ int main() {
     string courseId; // 将变量声明移到switch之前
     string studentUsername; // 将变量声明移到switch之前
     string teacherUsername; // 将变量声明移到switch之前
+    string name; // 将变量声明移到switch之前
+    int credits; // 将变量声明移到switch之前
 
     while (true) {
         cout << "请选择登录类型：" << endl;
@@ -127,7 +131,19 @@ int main() {
                                 cin >> username;
                                 changePassword(students, "students.txt", username);
                                 break;
-                            case 5:  // 退出
+                            case 5:  
+                                // 用户输入课程名称
+                                cout << "请输入课程名称: ";
+                                cin >> name;
+                                searchCoursesByName(courses, name);
+                                break;
+                            case 6: 
+                                 // 用户输入课程学分
+                                cout << "请输入课程学分: ";
+                                cin >> credits;
+                                searchCoursesByCredits(courses, credits);
+                                break;
+                            case 7:  // 退出
                                 cout << "退出学生菜单" << endl;
                                 return 0;
                             default:
